@@ -36,7 +36,11 @@ bool SoundManager::init(void)
 		//CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("sound/sound_fx_chip_was_unselected.wav");
 		//CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("sound/sound_fx_regeneration.wav");
 		//CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("sound/sound_fx_selected_chip.wav");
+#if (CC_TARGET_PLATFORM != CC_PLATFORM_AIRPLAY)
+		CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("sound/sound_fx_tap.wav");
+#else
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("sound/sound_fx_tap.raw");
+#endif
 		//CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("sound/sound_fx_ready.raw");
 		//CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("sound/sound_fx_new_girl.mp3");
 		//CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("sound/sound_fx_incorrect_matching.mp3");
